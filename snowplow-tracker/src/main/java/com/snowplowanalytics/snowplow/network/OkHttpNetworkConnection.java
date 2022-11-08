@@ -7,12 +7,12 @@ import android.os.Build;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.snowplowanalytics.snowplow.internal.emitter.Executor;
-import com.snowplowanalytics.snowplow.internal.emitter.TLSArguments;
-import com.snowplowanalytics.snowplow.internal.emitter.TLSVersion;
+import com.snowplowanalytics.core.emitter.Executor;
+import com.snowplowanalytics.core.emitter.TLSArguments;
+import com.snowplowanalytics.core.emitter.TLSVersion;
 import com.snowplowanalytics.snowplow.tracker.BuildConfig;
-import com.snowplowanalytics.snowplow.internal.constants.TrackerConstants;
-import com.snowplowanalytics.snowplow.internal.tracker.Logger;
+import com.snowplowanalytics.core.constants.TrackerConstants;
+import com.snowplowanalytics.core.tracker.Logger;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -25,7 +25,6 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-import okhttp3.Cookie;
 import okhttp3.CookieJar;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;

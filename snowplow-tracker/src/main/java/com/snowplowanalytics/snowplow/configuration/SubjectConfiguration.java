@@ -3,7 +3,7 @@ package com.snowplowanalytics.snowplow.configuration;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.snowplowanalytics.snowplow.internal.tracker.SubjectConfigurationInterface;
+import com.snowplowanalytics.core.tracker.SubjectConfigurationInterface;
 import com.snowplowanalytics.snowplow.util.Size;
 
 import org.json.JSONObject;

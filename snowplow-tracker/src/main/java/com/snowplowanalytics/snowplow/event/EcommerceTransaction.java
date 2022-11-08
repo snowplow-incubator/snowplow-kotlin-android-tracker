@@ -16,10 +16,10 @@ package com.snowplowanalytics.snowplow.event;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.snowplowanalytics.snowplow.internal.tracker.Tracker;
-import com.snowplowanalytics.snowplow.internal.constants.Parameters;
-import com.snowplowanalytics.snowplow.internal.constants.TrackerConstants;
-import com.snowplowanalytics.snowplow.internal.utils.Preconditions;
+import com.snowplowanalytics.core.tracker.Tracker;
+import com.snowplowanalytics.core.constants.Parameters;
+import com.snowplowanalytics.core.constants.TrackerConstants;
+import com.snowplowanalytics.core.utils.Preconditions;
 
 import java.util.ArrayList;
 import java.util.HashMap;

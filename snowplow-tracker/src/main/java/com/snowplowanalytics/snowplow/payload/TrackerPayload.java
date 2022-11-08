@@ -19,8 +19,8 @@ import androidx.annotation.Nullable;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.snowplowanalytics.snowplow.internal.utils.Util;
-import com.snowplowanalytics.snowplow.internal.tracker.Logger;
+import com.snowplowanalytics.core.utils.Util;
+import com.snowplowanalytics.core.tracker.Logger;
 
 import org.json.JSONObject;
 

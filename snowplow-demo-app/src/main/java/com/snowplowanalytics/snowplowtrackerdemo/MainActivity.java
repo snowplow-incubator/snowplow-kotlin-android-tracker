@@ -25,7 +25,7 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 
 import com.snowplowanalytics.snowplow.tracker.LogLevel;
-import com.snowplowanalytics.snowplow.internal.tracker.Logger;
+import com.snowplowanalytics.core.tracker.Logger;
 
 /**
  * Main Activity

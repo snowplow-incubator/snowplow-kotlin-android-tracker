@@ -40,7 +40,6 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.browser.customtabs.CustomTabsIntent;
 import androidx.core.util.Consumer;
-import androidx.core.util.Pair;
 
 import com.snowplowanalytics.snowplow.Snowplow;
 import com.snowplowanalytics.snowplow.configuration.EmitterConfiguration;
@@ -55,14 +54,13 @@ import com.snowplowanalytics.snowplow.controller.SessionController;
 import com.snowplowanalytics.snowplow.controller.TrackerController;
 import com.snowplowanalytics.snowplow.emitter.BufferOption;
 import com.snowplowanalytics.snowplow.globalcontexts.GlobalContext;
-import com.snowplowanalytics.snowplow.internal.remoteconfiguration.ConfigurationState;
 import com.snowplowanalytics.snowplow.tracker.DevicePlatform;
 import com.snowplowanalytics.snowplow.tracker.LoggerDelegate;
 import com.snowplowanalytics.snowplow.network.HttpMethod;
 import com.snowplowanalytics.snowplow.network.RequestCallback;
 import com.snowplowanalytics.snowplow.payload.SelfDescribingJson;
 import com.snowplowanalytics.snowplow.tracker.LogLevel;
-import com.snowplowanalytics.snowplow.internal.utils.Util;
+import com.snowplowanalytics.core.utils.Util;
 import com.snowplowanalytics.snowplow.util.Basis;
 import com.snowplowanalytics.snowplow.util.TimeMeasure;
 import com.snowplowanalytics.snowplowtrackerdemo.utils.DemoUtils;
@@ -74,7 +72,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-import static com.snowplowanalytics.snowplow.internal.utils.Util.addToMap;
+import static com.snowplowanalytics.core.utils.Util.addToMap;
 
 /**
  * Classic Demo Activity.

@@ -4,7 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.snowplowanalytics.snowplow.globalcontexts.GlobalContext;
-import com.snowplowanalytics.snowplow.internal.globalcontexts.GlobalContextsConfigurationInterface;
+import com.snowplowanalytics.core.globalcontexts.GlobalContextsConfigurationInterface;
 
 import java.util.HashMap;
 import java.util.Map;

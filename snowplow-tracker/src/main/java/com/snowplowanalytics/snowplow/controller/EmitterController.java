@@ -1,6 +1,6 @@
 package com.snowplowanalytics.snowplow.controller;
 
-import com.snowplowanalytics.snowplow.internal.emitter.EmitterConfigurationInterface;
+import com.snowplowanalytics.core.emitter.EmitterConfigurationInterface;
 
 public interface EmitterController extends EmitterConfigurationInterface {
 

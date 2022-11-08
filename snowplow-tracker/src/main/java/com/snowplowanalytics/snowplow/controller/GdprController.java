@@ -2,7 +2,7 @@ package com.snowplowanalytics.snowplow.controller;
 
 import androidx.annotation.NonNull;
 
-import com.snowplowanalytics.snowplow.internal.gdpr.GdprConfigurationInterface;
+import com.snowplowanalytics.core.gdpr.GdprConfigurationInterface;
 import com.snowplowanalytics.snowplow.util.Basis;
 
 public interface GdprController extends GdprConfigurationInterface {

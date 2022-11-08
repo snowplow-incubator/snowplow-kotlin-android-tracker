@@ -3,8 +3,8 @@ package com.snowplowanalytics.snowplow.tracker;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.snowplowanalytics.snowplow.internal.constants.Parameters;
-import com.snowplowanalytics.snowplow.internal.tracker.State;
+import com.snowplowanalytics.core.constants.Parameters;
+import com.snowplowanalytics.core.tracker.State;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -16,9 +16,9 @@ package com.snowplowanalytics.snowplow.event;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.snowplowanalytics.snowplow.internal.constants.Parameters;
-import com.snowplowanalytics.snowplow.internal.constants.TrackerConstants;
-import com.snowplowanalytics.snowplow.internal.utils.Util;
+import com.snowplowanalytics.core.constants.Parameters;
+import com.snowplowanalytics.core.constants.TrackerConstants;
+import com.snowplowanalytics.core.utils.Util;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.Map;
 
 // This library
-import com.snowplowanalytics.snowplow.internal.tracker.Tracker;
+import com.snowplowanalytics.core.tracker.Tracker;
 import com.snowplowanalytics.snowplow.payload.SelfDescribingJson;
 
 /**

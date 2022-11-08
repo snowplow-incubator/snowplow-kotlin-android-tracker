@@ -4,7 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.snowplowanalytics.snowplow.emitter.BufferOption;
-import com.snowplowanalytics.snowplow.internal.emitter.EmitterConfigurationInterface;
+import com.snowplowanalytics.core.emitter.EmitterConfigurationInterface;
 import com.snowplowanalytics.snowplow.network.RequestCallback;
 import com.snowplowanalytics.snowplow.emitter.EventStore;
 

@@ -3,8 +3,8 @@ package com.snowplowanalytics.snowplow.configuration;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.snowplowanalytics.snowplow.internal.tracker.Logger;
-import com.snowplowanalytics.snowplow.internal.tracker.TrackerConfigurationInterface;
+import com.snowplowanalytics.core.tracker.Logger;
+import com.snowplowanalytics.core.tracker.TrackerConfigurationInterface;
 import com.snowplowanalytics.snowplow.tracker.DevicePlatform;
 import com.snowplowanalytics.snowplow.tracker.LoggerDelegate;
 import com.snowplowanalytics.snowplow.tracker.LogLevel;

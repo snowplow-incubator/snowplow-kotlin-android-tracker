@@ -16,8 +16,8 @@ package com.snowplowanalytics.snowplow.network;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.snowplowanalytics.snowplow.internal.constants.Parameters;
-import com.snowplowanalytics.snowplow.internal.constants.TrackerConstants;
+import com.snowplowanalytics.core.constants.Parameters;
+import com.snowplowanalytics.core.constants.TrackerConstants;
 import com.snowplowanalytics.snowplow.payload.Payload;
 import com.snowplowanalytics.snowplow.payload.SelfDescribingJson;
 import com.snowplowanalytics.snowplow.payload.TrackerPayload;

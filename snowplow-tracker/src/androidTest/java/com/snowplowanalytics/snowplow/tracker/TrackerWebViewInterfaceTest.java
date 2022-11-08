@@ -25,7 +25,7 @@ import androidx.test.platform.app.InstrumentationRegistry;
 import com.snowplowanalytics.snowplow.Snowplow;
 import com.snowplowanalytics.snowplow.configuration.NetworkConfiguration;
 import com.snowplowanalytics.snowplow.configuration.TrackerConfiguration;
-import com.snowplowanalytics.snowplow.internal.tracker.TrackerWebViewInterface;
+import com.snowplowanalytics.core.tracker.TrackerWebViewInterface;
 import com.snowplowanalytics.snowplow.network.Request;
 
 import org.json.JSONException;

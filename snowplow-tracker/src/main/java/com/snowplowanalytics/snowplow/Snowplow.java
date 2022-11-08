@@ -8,17 +8,18 @@ import androidx.annotation.Nullable;
 import androidx.core.util.Consumer;
 import androidx.core.util.Pair;
 
+import com.snowplowanalytics.core.emitter.storage.EventStoreHelper;
 import com.snowplowanalytics.snowplow.configuration.Configuration;
 import com.snowplowanalytics.snowplow.configuration.NetworkConfiguration;
 import com.snowplowanalytics.snowplow.configuration.RemoteConfiguration;
 import com.snowplowanalytics.snowplow.configuration.TrackerConfiguration;
 import com.snowplowanalytics.snowplow.controller.TrackerController;
-import com.snowplowanalytics.snowplow.internal.remoteconfiguration.ConfigurationBundle;
-import com.snowplowanalytics.snowplow.internal.remoteconfiguration.ConfigurationProvider;
-import com.snowplowanalytics.snowplow.internal.remoteconfiguration.ConfigurationState;
-import com.snowplowanalytics.snowplow.internal.remoteconfiguration.FetchedConfigurationBundle;
-import com.snowplowanalytics.snowplow.internal.tracker.ServiceProvider;
-import com.snowplowanalytics.snowplow.internal.tracker.TrackerWebViewInterface;
+import com.snowplowanalytics.core.remoteconfiguration.ConfigurationBundle;
+import com.snowplowanalytics.core.remoteconfiguration.ConfigurationProvider;
+import com.snowplowanalytics.core.remoteconfiguration.ConfigurationState;
+import com.snowplowanalytics.core.remoteconfiguration.FetchedConfigurationBundle;
+import com.snowplowanalytics.core.tracker.ServiceProvider;
+import com.snowplowanalytics.core.tracker.TrackerWebViewInterface;
 import com.snowplowanalytics.snowplow.network.HttpMethod;
 
 import java.util.ArrayList;
@@ -136,7 +137,7 @@ public class Snowplow {
      * Those events are attached to the namespace.
      * If the tracker is removed or the app relaunched with a different namespace, those events can't
      * be sent to the collector and they remain in a zombie state inside the EventStore.
-     * To remove all the zombie events you can an internal method {@link com.snowplowanalytics.snowplow.internal.emitter.storage.EventStoreHelper#removeUnsentEventsExceptForNamespaces(Context, List) removeUnsentEventsExceptForNamespaces}
+     * To remove all the zombie events you can an internal method {@link EventStoreHelper#removeUnsentEventsExceptForNamespaces(Context, List) removeUnsentEventsExceptForNamespaces}
      * which will delete all the EventStores instanced with namespaces not listed in the passed list.
      *
      * @param context The Android app context.
@@ -169,7 +170,7 @@ public class Snowplow {
      * Those events are attached to the namespace.
      * If the tracker is removed or the app relaunched with a different namespace, those events can't
      * be sent to the collector and they remain in a zombie state inside the EventStore.
-     * To remove all the zombie events you can an internal method {@link com.snowplowanalytics.snowplow.internal.emitter.storage.EventStoreHelper#removeUnsentEventsExceptForNamespaces(Context, List) removeUnsentEventsExceptForNamespaces}
+     * To remove all the zombie events you can an internal method {@link EventStoreHelper#removeUnsentEventsExceptForNamespaces(Context, List) removeUnsentEventsExceptForNamespaces}
      * which will delete all the EventStores instanced with namespaces not listed in the passed list.
      *
      * @param context The Android app context.

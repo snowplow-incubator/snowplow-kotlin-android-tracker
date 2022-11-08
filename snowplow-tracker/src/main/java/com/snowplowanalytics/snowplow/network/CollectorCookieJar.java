@@ -18,7 +18,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import okhttp3.Cookie;
 import okhttp3.HttpUrl;
 
-import static com.snowplowanalytics.snowplow.internal.constants.TrackerConstants.COOKIE_PERSISTANCE;
+import static com.snowplowanalytics.core.constants.TrackerConstants.COOKIE_PERSISTANCE;
 
 public class CollectorCookieJar implements okhttp3.CookieJar {
     private Set<CollectorCookie> cookies;

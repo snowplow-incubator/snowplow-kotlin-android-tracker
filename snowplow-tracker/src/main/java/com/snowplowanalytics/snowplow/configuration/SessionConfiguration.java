@@ -4,7 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.util.Consumer;
 
-import com.snowplowanalytics.snowplow.internal.session.SessionConfigurationInterface;
+import com.snowplowanalytics.core.session.SessionConfigurationInterface;
 import com.snowplowanalytics.snowplow.tracker.SessionState;
 import com.snowplowanalytics.snowplow.util.TimeMeasure;
 

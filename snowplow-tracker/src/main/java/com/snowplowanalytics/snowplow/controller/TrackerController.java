@@ -3,7 +3,7 @@ package com.snowplowanalytics.snowplow.controller;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.snowplowanalytics.snowplow.internal.tracker.TrackerConfigurationInterface;
+import com.snowplowanalytics.core.tracker.TrackerConfigurationInterface;
 import com.snowplowanalytics.snowplow.event.Event;
 
 import java.util.UUID;

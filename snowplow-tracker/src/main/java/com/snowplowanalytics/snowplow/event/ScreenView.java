@@ -19,11 +19,11 @@ import android.app.Fragment;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.snowplowanalytics.snowplow.internal.constants.Parameters;
-import com.snowplowanalytics.snowplow.internal.constants.TrackerConstants;
-import com.snowplowanalytics.snowplow.internal.tracker.Logger;
-import com.snowplowanalytics.snowplow.internal.utils.Preconditions;
-import com.snowplowanalytics.snowplow.internal.utils.Util;
+import com.snowplowanalytics.core.constants.Parameters;
+import com.snowplowanalytics.core.constants.TrackerConstants;
+import com.snowplowanalytics.core.tracker.Logger;
+import com.snowplowanalytics.core.utils.Preconditions;
+import com.snowplowanalytics.core.utils.Util;
 
 import java.lang.reflect.Field;
 import java.util.HashMap;

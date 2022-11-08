@@ -19,10 +19,9 @@ import androidx.annotation.Nullable;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.snowplowanalytics.snowplow.internal.constants.Parameters;
-import com.snowplowanalytics.snowplow.internal.utils.Preconditions;
-import com.snowplowanalytics.snowplow.internal.utils.Util;
-import com.snowplowanalytics.snowplow.globalcontexts.GlobalContext;
+import com.snowplowanalytics.core.constants.Parameters;
+import com.snowplowanalytics.core.utils.Preconditions;
+import com.snowplowanalytics.core.utils.Util;
 
 import org.json.JSONObject;
 

@@ -4,8 +4,7 @@ package com.snowplowanalytics.snowplow.tracker;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.snowplowanalytics.snowplow.internal.tracker.StateFuture;
-import com.snowplowanalytics.snowplow.internal.tracker.TrackerStateSnapshot;
+import com.snowplowanalytics.core.tracker.TrackerStateSnapshot;
 
 import java.util.Map;
 

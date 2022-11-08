@@ -2,7 +2,7 @@ package com.snowplowanalytics.snowplow.controller;
 
 import androidx.annotation.NonNull;
 
-import com.snowplowanalytics.snowplow.internal.session.SessionConfigurationInterface;
+import com.snowplowanalytics.core.session.SessionConfigurationInterface;
 
 public interface SessionController extends SessionConfigurationInterface {
 

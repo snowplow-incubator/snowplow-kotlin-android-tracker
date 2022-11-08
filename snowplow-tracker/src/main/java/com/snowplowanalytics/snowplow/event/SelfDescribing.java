@@ -15,9 +15,9 @@ package com.snowplowanalytics.snowplow.event;
 
 import androidx.annotation.NonNull;
 
-import com.snowplowanalytics.snowplow.internal.constants.Parameters;
+import com.snowplowanalytics.core.constants.Parameters;
 import com.snowplowanalytics.snowplow.payload.SelfDescribingJson;
-import com.snowplowanalytics.snowplow.internal.utils.Preconditions;
+import com.snowplowanalytics.core.utils.Preconditions;
 
 import java.util.Map;
 

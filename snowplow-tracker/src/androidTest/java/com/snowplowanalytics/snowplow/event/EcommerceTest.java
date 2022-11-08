@@ -17,7 +17,7 @@ import android.test.AndroidTestCase;
 
 import androidx.test.espresso.core.internal.deps.guava.collect.Lists;
 
-import com.snowplowanalytics.snowplow.internal.constants.Parameters;
+import com.snowplowanalytics.core.constants.Parameters;
 
 import java.util.ArrayList;
 import java.util.List;
