@@ -1,29 +1,28 @@
-package com.snowplowanalytics.snowplow.controller;
+package com.snowplowanalytics.snowplow.controller
 
-import com.snowplowanalytics.core.emitter.EmitterConfigurationInterface;
+import com.snowplowanalytics.core.emitter.EmitterConfigurationInterface
 
-public interface EmitterController extends EmitterConfigurationInterface {
-
+interface EmitterController : EmitterConfigurationInterface {
     /**
      * Number of events recorded in the EventStore.
      */
-    long getDbCount();
+    val dbCount: Long
 
     /**
      * Whether the emitter is currently sending events.
      */
-    boolean isSending();
+    val isSending: Boolean
 
     /**
      * Pause emitting events.
      * Emitting events will be suspended until resumed again.
      * Suitable for low bandwidth situations.
      */
-    void pause();
+    fun pause()
 
     /**
      * Resume emitting events if previously paused.
      * The emitter will resume emitting events again.
      */
-    void resume();
+    fun resume()
 }

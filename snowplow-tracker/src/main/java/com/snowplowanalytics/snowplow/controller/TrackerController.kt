@@ -1,85 +1,70 @@
-package com.snowplowanalytics.snowplow.controller;
+package com.snowplowanalytics.snowplow.controller
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
+import com.snowplowanalytics.core.tracker.TrackerConfigurationInterface
+import com.snowplowanalytics.snowplow.event.Event
+import java.util.*
 
-import com.snowplowanalytics.core.tracker.TrackerConfigurationInterface;
-import com.snowplowanalytics.snowplow.event.Event;
-
-import java.util.UUID;
-
-public interface TrackerController extends TrackerConfigurationInterface {
-
-    /** Version of the tracker. */
-    @NonNull
-    String getVersion();
+interface TrackerController : TrackerConfigurationInterface {
+    /** Version of the tracker.  */
+    val version: String
 
     /**
      * Whether the tracker is running and able to collect/send events.
-     * @see {@link #pause()} and {@link #resume()}
+     * @see #pause and #resume
      */
-    boolean isTracking();
+    val isTracking: Boolean
 
     /**
      * Namespace of the tracker.
      * It is used to identify the tracker among multiple trackers running in the same app.
      */
-    @NonNull
-    String getNamespace();
-
+    val namespace: String
+    
     // Controllers
-
     /**
      * NetworkController.
      * @apiNote Don't retain the reference. It may change on tracker reconfiguration.
      */
-    @Nullable
-    NetworkController getNetwork();
+    val network: NetworkController?
 
     /**
      * SessionController.
      * @apiNote Don't retain the reference. It may change on tracker reconfiguration.
      */
-    @Nullable
-    SessionController getSession();
+    val session: SessionController?
 
     /**
      * EmitterController.
      * @apiNote Don't retain the reference. It may change on tracker reconfiguration.
      */
-    @NonNull
-    EmitterController getEmitter();
+    val emitter: EmitterController
 
     /**
      * SubjectController.
      * @apiNote Don't retain the reference. It may change on tracker reconfiguration.
      */
-    @NonNull
-    SubjectController getSubject();
+    val subject: SubjectController
 
     /**
      * GdprController.
      * @apiNote Don't retain the reference. It may change on tracker reconfiguration.
      */
-    @NonNull
-    GdprController getGdpr();
+    val gdpr: GdprController
 
     /**
      * GlobalContextsController.
      * @apiNote Don't retain the reference. It may change on tracker reconfiguration.
      */
-    @NonNull
-    GlobalContextsController getGlobalContexts();
-
+    val globalContexts: GlobalContextsController
+    
     // Methods
-
     /**
      * Track the event.
      * The tracker will take care to process and send the event assigning `event_id` and `device_timestamp`.
      * @param event The event to track.
      * @return The event ID or null in case tracking is paused
      */
-    UUID track(@NonNull Event event);
+    fun track(event: Event): UUID?
 
     /**
      * Pause the tracker.
@@ -87,11 +72,11 @@ public interface TrackerController extends TrackerConfigurationInterface {
      * already tracked but not sent yet.
      * Calling a track method will not have any effect and event tracked will be lost.
      */
-    void pause();
+    fun pause()
 
     /**
      * Resume the tracker.
      * The tracker will start tracking again.
      */
-    void resume();
+    fun resume()
 }

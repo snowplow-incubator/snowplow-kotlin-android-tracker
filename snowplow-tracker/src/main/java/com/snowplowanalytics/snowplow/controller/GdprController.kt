@@ -1,12 +1,9 @@
-package com.snowplowanalytics.snowplow.controller;
+package com.snowplowanalytics.snowplow.controller
 
-import androidx.annotation.NonNull;
+import com.snowplowanalytics.core.gdpr.GdprConfigurationInterface
+import com.snowplowanalytics.snowplow.util.Basis
 
-import com.snowplowanalytics.core.gdpr.GdprConfigurationInterface;
-import com.snowplowanalytics.snowplow.util.Basis;
-
-public interface GdprController extends GdprConfigurationInterface {
-
+interface GdprController : GdprConfigurationInterface {
     /**
      * Reset GDPR context to be sent with each event.
      * @param basisForProcessing GDPR Basis for processing.
@@ -14,20 +11,25 @@ public interface GdprController extends GdprConfigurationInterface {
      * @param documentVersion Version of the document.
      * @param documentDescription Description of the document.
      */
-    void reset(@NonNull Basis basisForProcessing, @NonNull String documentId, @NonNull String documentVersion, @NonNull String documentDescription);
+    fun reset(
+        basisForProcessing: Basis,
+        documentId: String,
+        documentVersion: String,
+        documentDescription: String
+    )
 
     /**
      * Whether the recorded GDPR context is enabled and will be attached as context.
      */
-    boolean isEnabled();
+    val isEnabled: Boolean
 
     /**
      * Enable the GDPR context recorded.
      */
-    boolean enable();
+    fun enable(): Boolean
 
     /**
      * Disable the GDPR context recorded.
      */
-    void disable();
+    fun disable()
 }
