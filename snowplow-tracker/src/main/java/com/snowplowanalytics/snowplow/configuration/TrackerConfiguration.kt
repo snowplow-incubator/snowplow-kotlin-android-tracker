@@ -2,7 +2,6 @@ package com.snowplowanalytics.snowplow.configuration
 
 import com.snowplowanalytics.core.tracker.Logger
 import com.snowplowanalytics.core.tracker.TrackerConfigurationInterface
-import com.snowplowanalytics.snowplow.configuration.TrackerConfiguration
 import com.snowplowanalytics.snowplow.tracker.DevicePlatform
 import com.snowplowanalytics.snowplow.tracker.LogLevel
 import com.snowplowanalytics.snowplow.tracker.LoggerDelegate
@@ -18,94 +17,114 @@ open class TrackerConfiguration(
     /**
      * @see .appId
      */
+    @JvmField
     var appId: String
 ) : TrackerConfigurationInterface, Configuration {
+    
     /**
      * @see .devicePlatform
      */
+    @JvmField
     var devicePlatform: DevicePlatform
 
     /**
      * @see .base64encoding
      */
+    @JvmField
     var base64encoding: Boolean
 
     /**
      * @see .logLevel
      */
+    @JvmField
     var logLevel: LogLevel
 
     /**
      * @see .loggerDelegate
      */
+    @JvmField
     var loggerDelegate: LoggerDelegate?
 
     /**
      * @see .applicationContext
      */
+    @JvmField
     var applicationContext: Boolean
 
     /**
      * @see .platformContext
      */
+    @JvmField
     var platformContext: Boolean
 
     /**
      * @see .geoLocationContext
      */
+    @JvmField
     var geoLocationContext: Boolean
 
     /**
      * @see .sessionContext
      */
+    @JvmField
     var sessionContext: Boolean
 
     /**
      * @see .deepLinkContext
      */
+    @JvmField
     var deepLinkContext: Boolean
 
     /**
      * @see .screenContext
      */
+    @JvmField
     var screenContext: Boolean
 
     /**
      * @see .screenViewAutotracking
      */
+    @JvmField
     var screenViewAutotracking: Boolean
 
     /**
      * @see .lifecycleAutotracking
      */
+    @JvmField
     var lifecycleAutotracking: Boolean
 
     /**
      * @see .installAutotracking
      */
+    @JvmField
     var installAutotracking: Boolean
 
     /**
      * @see .exceptionAutotracking
      */
+    @JvmField
     var exceptionAutotracking: Boolean
 
     /**
      * @see .diagnosticAutotracking
      */
+    @JvmField
     var diagnosticAutotracking: Boolean
 
     /**
      * @see .userAnonymisation
      */
+    @JvmField
     var userAnonymisation: Boolean
 
     /**
      * @see .trackerVersionSuffix
      */
+    @JvmField
     var trackerVersionSuffix: String? = null
 
     // Getters and Setters
+    
     override fun getAppId(): String {
         return appId
     }
@@ -249,7 +268,9 @@ open class TrackerConfiguration(
     override fun setTrackerVersionSuffix(trackerVersionSuffix: String?) {
         this.trackerVersionSuffix = trackerVersionSuffix
     }
+    
     // Constructors
+    
     /**
      * It sets a default TrackerConfiguration.
      * Default values:
@@ -289,7 +310,9 @@ open class TrackerConfiguration(
         diagnosticAutotracking = false
         userAnonymisation = false
     }
+    
     // Builder methods
+    
     /**
      * Identifer of the app.
      */
@@ -441,25 +464,24 @@ open class TrackerConfiguration(
 
     // Copyable
     override fun copy(): Configuration {
-        val copy = TrackerConfiguration(appId)
-        copy.devicePlatform = devicePlatform
-        copy.base64encoding = base64encoding
-        copy.logLevel = logLevel
-        copy.loggerDelegate = loggerDelegate
-        copy.sessionContext = sessionContext
-        copy.applicationContext = applicationContext
-        copy.platformContext = platformContext
-        copy.geoLocationContext = geoLocationContext
-        copy.screenContext = screenContext
-        copy.deepLinkContext = deepLinkContext
-        copy.screenViewAutotracking = screenViewAutotracking
-        copy.lifecycleAutotracking = lifecycleAutotracking
-        copy.installAutotracking = installAutotracking
-        copy.exceptionAutotracking = exceptionAutotracking
-        copy.diagnosticAutotracking = diagnosticAutotracking
-        copy.userAnonymisation = userAnonymisation
-        copy.trackerVersionSuffix = trackerVersionSuffix
-        return copy
+        return TrackerConfiguration(appId)
+            .devicePlatform(devicePlatform)
+            .base64encoding(base64encoding)
+            .logLevel(logLevel)
+            .loggerDelegate(loggerDelegate)
+            .sessionContext(sessionContext)
+            .applicationContext(applicationContext)
+            .platformContext(platformContext)
+            .geoLocationContext(geoLocationContext)
+            .screenContext(screenContext)
+            .deepLinkContext(deepLinkContext)
+            .screenViewAutotracking(screenViewAutotracking)
+            .lifecycleAutotracking(lifecycleAutotracking)
+            .installAutotracking(installAutotracking)
+            .exceptionAutotracking(exceptionAutotracking)
+            .diagnosticAutotracking(diagnosticAutotracking)
+            .userAnonymisation(userAnonymisation)
+            .trackerVersionSuffix(trackerVersionSuffix)
     }
 
     // JSON Formatter
@@ -469,15 +491,17 @@ open class TrackerConfiguration(
             appId
         )
     ) {
-        val `val` = jsonObject.optString("devicePlatform", DevicePlatform.Mobile.value)
-        devicePlatform = DevicePlatform.getByValue(`val`)
+        val value = jsonObject.optString("devicePlatform", DevicePlatform.Mobile.value)
+        devicePlatform = DevicePlatform.getByValue(value)
         base64encoding = jsonObject.optBoolean("base64encoding", base64encoding)
+        
         val log = jsonObject.optString("logLevel", LogLevel.OFF.name)
         try {
             logLevel = LogLevel.valueOf(log.uppercase(Locale.getDefault()))
         } catch (e: Exception) {
-            Logger.e(TAG, "Unable to decode `logLevel from remote configuration.")
+            Logger.e(TAG, "Unable to decode logLevel from remote configuration.")
         }
+        
         sessionContext = jsonObject.optBoolean("sessionContext", sessionContext)
         applicationContext = jsonObject.optBoolean("applicationContext", applicationContext)
         platformContext = jsonObject.optBoolean("platformContext", platformContext)

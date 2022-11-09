@@ -11,8 +11,7 @@ class RemoteConfiguration(endpoint: String, method: HttpMethod) : Configuration 
     /**
      * URL of the remote configuration.
      */
-    @JvmField
-    val endpoint: String = null
+    val endpoint: String
 
     /**
      * The method used to send the requests (GET or POST).
@@ -27,12 +26,11 @@ class RemoteConfiguration(endpoint: String, method: HttpMethod) : Configuration 
      * @param method   The method used to send the requests (GET or POST).
      */
     init {
-        Objects.requireNonNull(method)
         this.method = method
-        Objects.requireNonNull(endpoint)
         val uri = Uri.parse(endpoint)
         val scheme = uri.scheme
-        if (scheme != null && Arrays.asList("https", "http").contains(scheme)) {
+
+        if (scheme != null && listOf("https", "http").contains(scheme)) {
             this.endpoint = endpoint
         } else {
             this.endpoint = "https://$endpoint"

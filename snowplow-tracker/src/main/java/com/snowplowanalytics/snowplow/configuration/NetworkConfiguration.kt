@@ -30,21 +30,25 @@ class NetworkConfiguration : NetworkConfigurationInterface, Configuration {
     /**
      * @see .customPostPath
      */
+    @JvmField
     var customPostPath: String? = null
 
     /**
      * @see .timeout
      */
+    @JvmField
     var timeout: Int? = null
 
     /**
      * @see .okHttpClient
      */
+    @JvmField
     var okHttpClient: OkHttpClient? = null
 
     /**
      * @see .okHttpCookieJar
      */
+    @JvmField
     var okHttpCookieJar: CookieJar? = null
     
     /**
@@ -184,9 +188,6 @@ class NetworkConfiguration : NetworkConfigurationInterface, Configuration {
         val copy: NetworkConfiguration = if (networkConnection != null) {
             NetworkConfiguration(networkConnection!!)
         } else {
-            Objects.requireNonNull(endpoint)
-            Objects.requireNonNull(protocol)
-            Objects.requireNonNull(method)
             val scheme =
                 if (protocol == Protocol.HTTPS) "https://" else "http://"
             NetworkConfiguration(scheme + endpoint, method!!)

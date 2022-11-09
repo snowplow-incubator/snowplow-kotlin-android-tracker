@@ -14,53 +14,65 @@ open class SubjectConfiguration() : Configuration, SubjectConfigurationInterface
     /**
      * @see .userId
      */
+    @JvmField
     var userId: String? = null
 
     /**
      * @see .networkUserId
      */
+    @JvmField
     var networkUserId: String? = null
 
     /**
      * @see .domainUserId
      */
+    @JvmField
     var domainUserId: String? = null
 
     /**
      * @see .useragent
      */
+    @JvmField
     var useragent: String? = null
 
     /**
      * @see .ipAddress
      */
+    @JvmField
     var ipAddress: String? = null
 
     /**
      * @see .timezone
      */
+    @JvmField
     var timezone: String? = null
 
     /**
      * @see .language
      */
+    @JvmField
     var language: String? = null
 
     /**
      * @see .screenResolution
      */
+    @JvmField
     var screenResolution: Size? = null
 
     /**
      * @see .screenViewPort
      */
+    @JvmField
     var screenViewPort: Size? = null
 
     /**
      * @see .colorDepth
      */
+    @JvmField
     var colorDepth: Int? = null
+    
     // Builder methods
+    
     /**
      * The custom UserID.
      */
@@ -230,18 +242,17 @@ open class SubjectConfiguration() : Configuration, SubjectConfigurationInterface
 
     // Copyable
     override fun copy(): SubjectConfiguration {
-        val copy = SubjectConfiguration()
-        copy.userId = userId
-        copy.networkUserId = networkUserId
-        copy.domainUserId = domainUserId
-        copy.useragent = useragent
-        copy.ipAddress = ipAddress
-        copy.timezone = timezone
-        copy.language = language
-        copy.screenResolution = screenResolution
-        copy.screenViewPort = screenViewPort
-        copy.colorDepth = colorDepth
-        return copy
+        return SubjectConfiguration()
+            .userId(userId)
+            .networkUserId(networkUserId)
+            .domainUserId(domainUserId)
+            .useragent(useragent)
+            .ipAddress(ipAddress)
+            .timezone(timezone)
+            .language(language)
+            .screenResolution(screenResolution)
+            .screenViewPort(screenViewPort)
+            .colorDepth(colorDepth)
     }
 
     // JSON Formatter

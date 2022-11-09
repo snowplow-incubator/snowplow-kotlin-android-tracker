@@ -30,19 +30,24 @@ open class SessionConfiguration
      * session id is updated while the app is in the
      * foreground.
      */
+    @JvmField
     var foregroundTimeout: TimeMeasure,
+    
     /**
      * The amount of time that can elapse before the
      * session id is updated while the app is in the
      * background.
      */
+    @JvmField
     var backgroundTimeout: TimeMeasure
 ) : SessionConfigurationInterface, Configuration {
+    
     /**
      * The callback called everytime the session is updated.
      */
+    @JvmField
     var onSessionUpdate: Consumer<SessionState>? = null
-    // Constructors
+    
     // Getters and Setters
     /**
      * @see .foregroundTimeout
