@@ -10,13 +10,7 @@
  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the Apache License Version 2.0 for the specific language governing permissions and limitations there under.
  */
-
-package com.snowplowanalytics.snowplow.payload;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-
-import java.util.Map;
+package com.snowplowanalytics.snowplow.payload
 
 /**
  * Payload interface
@@ -24,17 +18,15 @@ import java.util.Map;
  * to send data via the HTTP GET/POST request.
  *
  * @version 0.5.0
- * @author Jonathan Almeida
  */
-public interface Payload {
-
+interface Payload {
     /**
      * Add a basic parameter.
      *
      * @param key The parameter key
      * @param value The parameter value as a String
      */
-    void add(@NonNull String key, @Nullable String value);
+    fun add(key: String, value: String?)
 
     /**
      * Add a basic parameter.
@@ -42,7 +34,7 @@ public interface Payload {
      * @param key The parameter key
      * @param value The parameter value
      */
-    void add(@NonNull String key, @Nullable Object value);
+    fun add(key: String, value: Any?)
 
     /**
      * Add all the mappings from the specified map. The effect is the equivalent to that of calling
@@ -50,25 +42,29 @@ public interface Payload {
      *
      * @param map Mappings to be stored in this map
      */
-    void addMap(@NonNull Map<String, Object> map);
+    fun addMap(map: Map<String, Any>)
 
     /**
      * Add a map to the Payload with a key dependent on the base 64 encoding option you choose using the
      * two keys provided.
-     *  @param map Mapping to be stored
+     * @param map Mapping to be stored
      * @param base64_encoded The option you choose to encode the data
      * @param type_encoded The key that would be set if the encoding option was set to true
-     * @param type_no_encoded They key that would be set if the encoding option was set to false
+     * @param type_no_encoded The key that would be set if the encoding option was set to false
      */
-    void addMap(@NonNull Map map, @NonNull Boolean base64_encoded, @Nullable String type_encoded, @Nullable String type_no_encoded);
+    fun addMap(
+        map: Map<*, *>,
+        base64_encoded: Boolean,
+        type_encoded: String?,
+        type_no_encoded: String?
+    )
 
     /**
      * Returns the Payload as a HashMap.
      *
      * @return A HashMap
      */
-    @NonNull
-    Map getMap();
+    val map: Map<*, *>
 
     /**
      * Returns the Payload as a string. This is essentially the toString from the ObjectNode used
@@ -76,13 +72,12 @@ public interface Payload {
      *
      * @return A string value of the Payload.
      */
-    @NonNull
-    String toString();
+    override fun toString(): String
 
     /**
      * Returns the byte size of a payload.
      *
      * @return A long representing the byte size of the payload.
      */
-    long getByteSize();
+    val byteSize: Long
 }
