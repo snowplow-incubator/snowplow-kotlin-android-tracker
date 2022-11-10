@@ -24,17 +24,17 @@ open class GdprConfiguration
      * ID of a GDPR basis document.
      */
     @JvmField
-    val documentId: String,
+    val documentId: String?,
     /**
      * Version of the document.
      */
     @JvmField
-    val documentVersion: String,
+    val documentVersion: String?,
     /**
      * Description of the document.
      */
     @JvmField
-    val documentDescription: String
+    val documentDescription: String?
 ) : Configuration, GdprConfigurationInterface {
 
     // Getters
@@ -48,21 +48,21 @@ open class GdprConfiguration
     /**
      * ID of a GDPR basis document.
      */
-    override fun getDocumentId(): String {
+    override fun getDocumentId(): String? {
         return documentId
     }
 
     /**
      * Version of the document.
      */
-    override fun getDocumentVersion(): String {
+    override fun getDocumentVersion(): String? {
         return documentVersion
     }
 
     /**
      * Description of the document.
      */
-    override fun getDocumentDescription(): String {
+    override fun getDocumentDescription(): String? {
         return documentDescription
     }
 
