@@ -20,7 +20,7 @@ public class StateManager {
     private final HashMap<String, List<StateMachineInterface>> eventSchemaToStateMachine = new HashMap<>();
     private final HashMap<String, List<StateMachineInterface>> eventSchemaToEntitiesGenerator = new HashMap<>();
     private final HashMap<String, List<StateMachineInterface>> eventSchemaToPayloadUpdater = new HashMap<>();
-    final TrackerState trackerState = new TrackerState();
+    public final TrackerState trackerState = new TrackerState();
 
 
     public synchronized void addOrReplaceStateMachine(@NonNull StateMachineInterface stateMachine, @NonNull String identifier) {
@@ -52,7 +52,7 @@ public class StateManager {
     }
 
     @NonNull
-    synchronized TrackerStateSnapshot trackerStateForProcessedEvent(@NonNull Event event) {
+    public synchronized TrackerStateSnapshot trackerStateForProcessedEvent(@NonNull Event event) {
         if (event instanceof AbstractSelfDescribing) {
             AbstractSelfDescribing sdEvent = (AbstractSelfDescribing) event;
             List<StateMachineInterface> stateMachines = new LinkedList<>();
@@ -87,7 +87,7 @@ public class StateManager {
     }
 
     @NonNull
-    synchronized List<SelfDescribingJson> entitiesForProcessedEvent(@NonNull InspectableEvent event) {
+    public synchronized List<SelfDescribingJson> entitiesForProcessedEvent(@NonNull InspectableEvent event) {
         List<SelfDescribingJson> result = new LinkedList<>();
         List<StateMachineInterface> stateMachines = new LinkedList<>();
         List<StateMachineInterface> stateMachinesForSchema = eventSchemaToEntitiesGenerator.get(event.getSchema());

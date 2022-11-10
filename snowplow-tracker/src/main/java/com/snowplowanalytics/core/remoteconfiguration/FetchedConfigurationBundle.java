@@ -23,7 +23,7 @@ public class FetchedConfigurationBundle implements Configuration {
     @NonNull
     public List<ConfigurationBundle> configurationBundle;
 
-    FetchedConfigurationBundle(@NonNull String schema) {
+    public FetchedConfigurationBundle(@NonNull String schema) {
         this.schema = schema;
         this.configurationVersion = -1;
         this.configurationBundle = new ArrayList<>();

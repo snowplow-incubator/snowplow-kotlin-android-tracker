@@ -47,7 +47,7 @@ public class PlatformContext {
      * @param networkDictUpdateFrequency Minimal gap between subsequent updates of network platform information in milliseconds
      * @param deviceInfoMonitor Device monitor for fetching platform information
      */
-    PlatformContext(long platformDictUpdateFrequency, long networkDictUpdateFrequency, @NonNull DeviceInfoMonitor deviceInfoMonitor, @NonNull Context context) {
+    public PlatformContext(long platformDictUpdateFrequency, long networkDictUpdateFrequency, @NonNull DeviceInfoMonitor deviceInfoMonitor, @NonNull Context context) {
         this.platformDictUpdateFrequency = platformDictUpdateFrequency;
         this.networkDictUpdateFrequency = networkDictUpdateFrequency;
         this.deviceInfoMonitor = deviceInfoMonitor;
@@ -61,7 +61,7 @@ public class PlatformContext {
      *
      * @param context the Android context
      */
-    PlatformContext(@NonNull Context context) {
+    public PlatformContext(@NonNull Context context) {
         this(100, 10 * 1000, new DeviceInfoMonitor(), context);
     }
 

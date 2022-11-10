@@ -33,7 +33,7 @@ public class TrackerEvent implements InspectableEvent {
     Map<String, Object> payload;
     String schema;
     String eventName;
-    UUID eventId;
+    public UUID eventId;
     long timestamp;
     Long trueTimestamp;
     List<SelfDescribingJson> contexts;

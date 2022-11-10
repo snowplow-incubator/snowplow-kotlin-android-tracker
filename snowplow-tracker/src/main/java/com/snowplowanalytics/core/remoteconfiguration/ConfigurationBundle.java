@@ -31,7 +31,7 @@ public class ConfigurationBundle implements Configuration {
     @Nullable
     public SessionConfiguration sessionConfiguration;
 
-    ConfigurationBundle(@NonNull String namespace) {
+    public ConfigurationBundle(@NonNull String namespace) {
         this(namespace, null);
     }
 
