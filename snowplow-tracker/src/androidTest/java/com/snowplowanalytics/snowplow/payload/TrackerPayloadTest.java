@@ -36,7 +36,7 @@ public class TrackerPayloadTest extends AndroidTestCase {
         map.put("a", "string");
         map.put("b", "");
         map.put("c", null);
-        return map;
+        return map;§
     }
 
     public void testAddKeyWhenValue() {
@@ -79,7 +79,7 @@ public class TrackerPayloadTest extends AndroidTestCase {
 
     public void testAddSimpleMapBase64NoEncode() throws JSONException {
         payload.addMap(createTestMap(), false, "enc", "no_enc");
-        Map<String, Object> map = payload.getMap();
+        Map<String, String> map = payload.getMap();
         assertFalse(map.containsKey("enc"));
         assertTrue(map.containsKey("no_enc"));
         JSONObject json = new JSONObject((String) map.get("no_enc"));
@@ -90,7 +90,7 @@ public class TrackerPayloadTest extends AndroidTestCase {
 
     public void testAddMapBase64Encoded() throws JSONException {
         payload.addMap(createTestMap(), true, "enc", "no_enc");
-        Map<String, Object> map = payload.getMap();
+        Map<String, String> map = payload.getMap();
         assertFalse(map.containsKey("no_enc"));
         String base64Json = (String) payload.getMap().get("enc");
         String jsonString = "";

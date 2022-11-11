@@ -96,9 +96,9 @@ public class TrackerEvent implements InspectableEvent {
     }
 
     @Override
-    public boolean addPayloadValues(@NonNull Map<String, Object> payloadAdding) {
+    public boolean addPayloadValues(@NonNull Map<String, ?> payloadAdding) {
         boolean result = true;
-        for (Map.Entry<String, Object> entry : payloadAdding.entrySet()) {
+        for (Map.Entry<String, ?> entry : payloadAdding.entrySet()) {
             String key = entry.getKey();
             if (payload.get(key) == null) {
                 payload.put(key, entry.getValue());

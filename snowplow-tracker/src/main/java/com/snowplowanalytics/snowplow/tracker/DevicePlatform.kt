@@ -10,45 +10,31 @@
  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the Apache License Version 2.0 for the specific language governing permissions and limitations there under.
  */
+package com.snowplowanalytics.snowplow.tracker
 
-package com.snowplowanalytics.snowplow.tracker;
-
-import androidx.annotation.NonNull;
-
-import java.util.EnumSet;
+import java.util.*
 
 /**
  * The different platforms available to the Tracker.
  */
-public enum DevicePlatform {
-
-    Web("web"),
-    Mobile("mob"),
-    Desktop("pc"),
-    ServerSideApp("srv"),
-    General("app"),
-    ConnectedTV("tv"),
+enum class DevicePlatform(val value: String) {
+    Web("web"), 
+    Mobile("mob"), 
+    Desktop("pc"), 
+    ServerSideApp("srv"), 
+    General("app"), 
+    ConnectedTV("tv"), 
     GameConsole("cnsl"),
     InternetOfThings("iot");
 
-    private final String value;
-
-    DevicePlatform(final String value) {
-        this.value = value;
-    }
-
-    @NonNull
-    public String getValue() {
-        return value;
-    }
-
-    @NonNull
-    public static DevicePlatform getByValue(@NonNull String value){
-        for (final DevicePlatform element : EnumSet.allOf(DevicePlatform.class)) {
-            if (element.toString().equals(value)) {
-                return element;
+    companion object {
+        fun getByValue(value: String): DevicePlatform {
+            for (element in EnumSet.allOf(DevicePlatform::class.java)) {
+                if (element.toString() == value) {
+                    return element
+                }
             }
+            return Mobile
         }
-        return Mobile;
     }
 }

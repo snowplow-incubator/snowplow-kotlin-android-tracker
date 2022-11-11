@@ -10,31 +10,27 @@
  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the Apache License Version 2.0 for the specific language governing permissions and limitations there under.
  */
+package com.snowplowanalytics.snowplow.tracker
 
-package com.snowplowanalytics.snowplow.tracker;
-
-import androidx.annotation.NonNull;
-
-public interface LoggerDelegate {
-
+interface LoggerDelegate {
     /**
      * Error Level Logging
      * @param tag the log tag
      * @param msg the log message
      */
-    void error(@NonNull String tag, @NonNull String msg);
+    fun error(tag: String, msg: String)
 
     /**
      * Debug Level Logging
      * @param tag the log tag
      * @param msg the log message
      */
-    void debug(@NonNull String tag, @NonNull String msg);
+    fun debug(tag: String, msg: String)
 
     /**
      * Verbose Level Logging
      * @param tag the log tag
      * @param msg the log message
      */
-    void verbose(@NonNull String tag, @NonNull String msg);
+    fun verbose(tag: String, msg: String)
 }
