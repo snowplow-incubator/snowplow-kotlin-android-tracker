@@ -36,7 +36,7 @@ public class TrackerPayloadTest extends AndroidTestCase {
         map.put("a", "string");
         map.put("b", "");
         map.put("c", null);
-        return map;§
+        return map;
     }
 
     public void testAddKeyWhenValue() {
