@@ -23,7 +23,7 @@ import org.json.JSONObject
 class TrackerPayload : Payload {
     private val TAG = TrackerPayload::class.java.simpleName
     
-    override val map = HashMap<String?, Any?>()
+    override val map = HashMap<String, String>()
     
     override fun add(key: String, value: String?) {
         if (value == null || value.isEmpty()) {
@@ -42,7 +42,7 @@ class TrackerPayload : Payload {
             return
         }
         Logger.v(TAG, "Adding new kv pair: $key->%s", value)
-        map[key] = value
+        map[key] = value.toString()
     }
 
     override fun addMap(map: Map<String, Any>) {
@@ -69,7 +69,7 @@ class TrackerPayload : Payload {
     }
 
     override fun toString(): String {
-        return JSONObject(map).toString()
+        return JSONObject(map as Map<*, *>).toString()
     }
 
     override val byteSize: Long

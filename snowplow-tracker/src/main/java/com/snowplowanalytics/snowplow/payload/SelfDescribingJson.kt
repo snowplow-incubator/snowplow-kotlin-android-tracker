@@ -61,6 +61,16 @@ open class SelfDescribingJson {
     }
 
     /**
+     * Builds a SelfDescribingJson object
+     *
+     * @param schema the schema string
+     */
+    constructor(schema: String) {
+        setSchema(schema)
+        setData(HashMap<Any, Any>())
+    }
+
+    /**
      * Sets the Schema for the SelfDescribingJson
      *
      * @param schema a valid schema string

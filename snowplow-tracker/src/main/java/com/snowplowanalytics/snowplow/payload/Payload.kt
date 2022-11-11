@@ -64,7 +64,7 @@ interface Payload {
      *
      * @return A HashMap
      */
-    val map: Map<*, *>
+    val map: Map<String,String>
 
     /**
      * Returns the Payload as a string. This is essentially the toString from the ObjectNode used

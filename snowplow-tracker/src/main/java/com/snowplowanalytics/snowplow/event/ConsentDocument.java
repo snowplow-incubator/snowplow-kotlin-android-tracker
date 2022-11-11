@@ -21,6 +21,7 @@ import com.snowplowanalytics.core.constants.TrackerConstants;
 import com.snowplowanalytics.core.utils.Preconditions;
 import com.snowplowanalytics.snowplow.payload.TrackerPayload;
 
+import java.util.HashMap;
 import java.util.Map;
 
 /** A consent document event. */
@@ -75,12 +76,12 @@ public class ConsentDocument extends AbstractSelfDescribing {
 
     @Override
     public @NonNull Map<String, Object> getDataPayload() {
-        TrackerPayload payload = new TrackerPayload();
-        payload.add(Parameters.CD_ID, this.documentId);
-        payload.add(Parameters.CD_NAME, this.documentName);
-        payload.add(Parameters.CD_DESCRIPTION, this.documentDescription);
-        payload.add(Parameters.CD_VERSION, this.documentVersion);
-        return payload.getMap();
+        HashMap<String,Object> payload = new HashMap<>();
+        payload.put(Parameters.CD_ID, this.documentId);
+        payload.put(Parameters.CD_NAME, this.documentName);
+        payload.put(Parameters.CD_DESCRIPTION, this.documentDescription);
+        payload.put(Parameters.CD_VERSION, this.documentVersion);
+        return payload;
     }
 
     @Override
