@@ -22,6 +22,7 @@ import android.content.Context;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.platform.app.InstrumentationRegistry;
 
+import com.snowplowanalytics.core.utils.Util;
 import com.snowplowanalytics.snowplow.Snowplow;
 import com.snowplowanalytics.snowplow.configuration.NetworkConfiguration;
 import com.snowplowanalytics.snowplow.configuration.TrackerConfiguration;
@@ -78,7 +79,7 @@ public class TrackerWebViewInterfaceTest {
 
         assertEquals(1, networkConnection.countRequests());
         Request request = networkConnection.getAllRequests().get(0);
-        Map payload = request.payload.getMap();
+        Map<String, String> payload = Util.objectMapToString(request.payload.getMap());
         assertEquals("cat", payload.get("se_ca"));
         assertEquals("act", payload.get("se_ac"));
         assertEquals("prop", payload.get("se_pr"));

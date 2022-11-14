@@ -57,7 +57,7 @@ public class TrackerPayloadTest {
         payload.add("a", "string");
         assertEquals("string", payload.getMap().get("a"));
         payload.add("a", 123);
-        assertEquals("123", payload.getMap().get("a"));
+        assertEquals(123, payload.getMap().get("a"));
     }
 
     @Test
@@ -98,7 +98,7 @@ public class TrackerPayloadTest {
     @Test
     public void testAddSimpleMapBase64NoEncode() throws JSONException {
         payload.addMap(createTestMap(), false, "enc", "no_enc");
-        Map<String, String> map = Util.objectMapToString(payload.getMap());
+        Map<String, Object> map = payload.getMap();
         assertFalse(map.containsKey("enc"));
         assertTrue(map.containsKey("no_enc"));
         JSONObject json = new JSONObject((String) map.get("no_enc"));

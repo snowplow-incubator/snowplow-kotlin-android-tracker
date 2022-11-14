@@ -366,7 +366,7 @@ public class Util {
     public static Map<String, String> objectMapToString(@NonNull Map<String, Object> map) {
         Map<String, String> stringsMap = new HashMap<>();
         for (Map.Entry<String, Object> entry : map.entrySet()) {
-            stringsMap.put(entry.getKey(), String.valueOf(entry));
+            stringsMap.put(entry.getKey(), String.valueOf(entry.getValue()));
         }
         return stringsMap;
     }
