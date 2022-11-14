@@ -10,20 +10,8 @@
  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the Apache License Version 2.0 for the specific language governing permissions and limitations there under.
  */
+package com.snowplowanalytics.snowplow.emitter
 
-package com.snowplowanalytics.snowplow.emitter;
+import com.snowplowanalytics.snowplow.payload.Payload
 
-import androidx.annotation.NonNull;
-
-import com.snowplowanalytics.snowplow.payload.Payload;
-
-public class EmitterEvent {
-
-    public final Payload payload;
-    public final long eventId;
-
-    public EmitterEvent(@NonNull Payload payload, long eventId) {
-        this.payload = payload;
-        this.eventId = eventId;
-    }
-}
+class EmitterEvent(@JvmField val payload: Payload, @JvmField val eventId: Long)

@@ -10,13 +10,12 @@
  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the Apache License Version 2.0 for the specific language governing permissions and limitations there under.
  */
-
-package com.snowplowanalytics.snowplow.emitter;
+package com.snowplowanalytics.snowplow.emitter
 
 /**
  * BufferOption is used to set the buffer size of your Emitter.
  */
-public enum BufferOption {
+enum class BufferOption(val code: Int) {
     /**
      * Sends both GET and POST requests with only a single event.  Can cause a spike in
      * network traffic if used in correlation with a large amount of events.
@@ -34,14 +33,4 @@ public enum BufferOption {
      * need to be sent.  All GET requests will still emit one at a time.
      */
     HeavyGroup(25);
-
-    private int code;
-
-    BufferOption(int c) {
-        code = c;
-    }
-
-    public int getCode() {
-        return code;
-    }
 }

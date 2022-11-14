@@ -10,52 +10,46 @@
  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the Apache License Version 2.0 for the specific language governing permissions and limitations there under.
  */
+package com.snowplowanalytics.snowplow.emitter
 
-package com.snowplowanalytics.snowplow.emitter;
-
-import androidx.annotation.NonNull;
-
-import com.snowplowanalytics.snowplow.payload.Payload;
-
-import java.util.List;
+import com.snowplowanalytics.snowplow.payload.Payload
 
 /**
  * Interface for the component that
  * persists events before sending.
  */
-public interface EventStore {
-
+interface EventStore {
     /**
      * Adds an event to the store.
      * @param payload the payload to be added
      */
-    void add(@NonNull Payload payload);
+    fun add(payload: Payload)
 
     /**
      * Removes an event from the store.
      * @param id the identifier of the event in the store.
      * @return a boolean of success to remove.
      */
-    boolean removeEvent(long id);
+    fun removeEvent(id: Long): Boolean
 
     /**
      * Removes a range of events from the store.
      * @param ids the events' identifiers in the store.
      * @return a boolean of success to remove.
      */
-    boolean removeEvents(@NonNull List<Long> ids);
+    fun removeEvents(ids: List<Long?>): Boolean
 
     /**
      * Empties the store of all the events.
      * @return a boolean of success to remove.
      */
-    boolean removeAllEvents();
+    fun removeAllEvents(): Boolean
 
     /**
      * Returns amount of events currently in the store.
      * @return the count of events in the store.
      */
-    long getSize();
+    val size: Long
 
     /**
      * Returns a list of EmittableEvent objects which
@@ -63,5 +57,5 @@ public interface EventStore {
      * @return EmittableEvent objects containing
      * eventIds and event payloads.
      */
-    @NonNull List<EmitterEvent> getEmittableEvents(int queryLimit);
+    fun getEmittableEvents(queryLimit: Int): List<EmitterEvent?>
 }
