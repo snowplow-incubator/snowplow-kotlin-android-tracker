@@ -357,6 +357,21 @@ public class Util {
     }
 
     /**
+     * Converts a map with Object values into String values.
+     *
+     * @param map the map to be converted
+     * @return the new Map
+     */
+    @NonNull
+    public static Map<String, String> objectMapToString(@NonNull Map<String, Object> map) {
+        Map<String, String> stringsMap = new HashMap<>();
+        for (Map.Entry<String, Object> entry : map.entrySet()) {
+            stringsMap.put(entry.getKey(), String.valueOf(entry));
+        }
+        return stringsMap;
+    }
+
+    /**
      * Converts a StackTrace to a String
      *
      * @param e the Throwable to convert

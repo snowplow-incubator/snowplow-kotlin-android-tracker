@@ -23,7 +23,7 @@ import org.json.JSONObject
 class TrackerPayload : Payload {
     private val TAG = TrackerPayload::class.java.simpleName
     
-    override val map = HashMap<String, String>()
+    override val map = HashMap<String, Any>()
     
     override fun add(key: String, value: String?) {
         if (value == null || value.isEmpty()) {
@@ -42,29 +42,33 @@ class TrackerPayload : Payload {
             return
         }
         Logger.v(TAG, "Adding new kv pair: $key->%s", value)
-        map[key] = value.toString()
+        map[key] = value
     }
 
-    override fun addMap(map: Map<String, Any>) {
+    override fun addMap(map: Map<String, Any>?) {
         Logger.v(TAG, "Adding new map: %s", map)
-        for ((key, value) in map) {
-            add(key, value)
+        if (map != null) {
+            for ((key, value) in map) {
+                add(key, value)
+            }
         }
     }
 
     override fun addMap(
-        map: Map<*, *>,
+        map: Map<*, *>?,
         base64_encoded: Boolean,
         type_encoded: String?,
         type_no_encoded: String?
     ) {
-        val mapString = JSONObject(map).toString()
-        Logger.v(TAG, "Adding new map: %s", map)
-        
-        if (base64_encoded) { // base64 encoded data
-            add(type_encoded!!, Util.base64Encode(mapString))
-        } else { // add it as a child node
-            add(type_no_encoded!!, mapString)
+        if (map != null) {
+            val mapString = JSONObject(map).toString()
+            Logger.v(TAG, "Adding new map: %s", map)
+
+            if (base64_encoded) { // base64 encoded data
+                add(type_encoded!!, Util.base64Encode(mapString))
+            } else { // add it as a child node
+                add(type_no_encoded!!, mapString)
+            }
         }
     }
 

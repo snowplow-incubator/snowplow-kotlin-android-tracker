@@ -204,8 +204,8 @@ public class TrackerTest {
 
     @Test
     public void testTrackSelfDescribingEvent() throws JSONException, IOException, InterruptedException {
-        Executor.setThreadCount(30);
-        Executor.shutdown();
+//        Executor.setThreadCount(30);
+//        Executor.shutdown();
 
         String namespace = "myNamespace";
         TestUtils.createSessionSharedPreferences(getContext(), namespace);

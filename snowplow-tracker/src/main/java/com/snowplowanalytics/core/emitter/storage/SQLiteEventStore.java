@@ -122,7 +122,7 @@ public class SQLiteEventStore implements EventStore {
     @SuppressWarnings("unchecked")
     public long insertEvent(@NonNull Payload payload) {
         if (isDatabaseOpen()) {
-            byte[] bytes = Util.serialize(payload.getMap());
+            byte[] bytes = Util.serialize(Util.objectMapToString(payload.getMap()));
             ContentValues values = new ContentValues(2);
             values.put(EventStoreHelper.COLUMN_EVENT_DATA, bytes);
             lastInsertedRowId = database.insert(EventStoreHelper.TABLE_EVENTS, null, values);

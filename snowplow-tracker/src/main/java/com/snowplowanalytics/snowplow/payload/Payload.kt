@@ -42,7 +42,7 @@ interface Payload {
      *
      * @param map Mappings to be stored in this map
      */
-    fun addMap(map: Map<String, Any>)
+    fun addMap(map: Map<String, Any>?)
 
     /**
      * Add a map to the Payload with a key dependent on the base 64 encoding option you choose using the
@@ -53,7 +53,7 @@ interface Payload {
      * @param type_no_encoded The key that would be set if the encoding option was set to false
      */
     fun addMap(
-        map: Map<*, *>,
+        map: Map<*, *>?,
         base64_encoded: Boolean,
         type_encoded: String?,
         type_no_encoded: String?
@@ -64,7 +64,7 @@ interface Payload {
      *
      * @return A HashMap
      */
-    val map: Map<String,String>
+    val map: Map<String,Any>
 
     /**
      * Returns the Payload as a string. This is essentially the toString from the ObjectNode used
