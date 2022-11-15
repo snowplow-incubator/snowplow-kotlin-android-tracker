@@ -77,7 +77,6 @@ open class SelfDescribingJson {
      * @return itself if it passes precondition checks
      */
     fun setSchema(schema: String): SelfDescribingJson {
-        Preconditions.checkNotNull(schema, "schema cannot be null")
         Preconditions.checkArgument(schema.isNotEmpty(), "schema cannot be empty.")
         
         payload[Parameters.SCHEMA] = schema
