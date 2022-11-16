@@ -71,33 +71,6 @@ public class EcommerceTest extends AndroidTestCase {
     public void testBuilderFailures() {
         boolean exception = false;
         try {
-            new EcommerceTransaction(null, null, null);
-        } catch (Exception e) {
-            assertEquals(null, e.getMessage());
-            exception = true;
-        }
-        assertTrue(exception);
-
-        exception = false;
-        try {
-            new EcommerceTransaction("some order id", null, new ArrayList<EcommerceTransactionItem>());
-        } catch (Exception e) {
-            assertEquals(null, e.getMessage());
-            exception = true;
-        }
-        assertTrue(exception);
-
-        exception = false;
-        try {
-            new EcommerceTransaction("some order id", 123.456, null);
-        } catch (Exception e) {
-            assertEquals(null, e.getMessage());
-            exception = true;
-        }
-        assertTrue(exception);
-
-        exception = false;
-        try {
             new EcommerceTransaction("", 123.456, new ArrayList<EcommerceTransactionItem>());
         } catch (Exception e) {
             assertEquals("orderId cannot be empty", e.getMessage());
