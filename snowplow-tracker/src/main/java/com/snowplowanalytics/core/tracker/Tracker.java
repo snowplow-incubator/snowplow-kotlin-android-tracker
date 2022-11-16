@@ -341,7 +341,8 @@ public class Tracker {
         }
 
         /**
-         * @param userAnonymisation whether to anonymise client-side user identifiers in session (userId, previousSessionId), subject (userId, networkUserId, domainUserId, ipAddress) and platform context entities (IDFA)
+         * @param userAnonymisation whether to anonymise client-side user identifiers in session (userId, previousSessionId), 
+         *                          subject (userId, networkUserId, domainUserId, ipAddress) and platform context entities (IDFA)
          * @return itself
          */
         @NonNull

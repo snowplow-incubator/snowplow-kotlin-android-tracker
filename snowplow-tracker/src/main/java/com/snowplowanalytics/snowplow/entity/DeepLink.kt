@@ -30,6 +30,11 @@ class DeepLink(url: String) : SelfDescribingJson(SCHEMA_DEEPLINK) {
         return this
     }
 
+    val url: String?
+        get() = parameters[PARAM_DEEPLINK_URL] as String?
+    val referrer: String?
+        get() = parameters[PARAM_DEEPLINK_REFERRER] as String?
+
     companion object {
         const val SCHEMA_DEEPLINK = "iglu:com.snowplowanalytics.mobile/deep_link/jsonschema/1-0-0"
         const val PARAM_DEEPLINK_REFERRER = "referrer"

@@ -5,7 +5,6 @@ import androidx.annotation.Nullable;
 import androidx.core.util.Consumer;
 
 import com.snowplowanalytics.snowplow.configuration.SessionConfiguration;
-import com.snowplowanalytics.snowplow.network.RequestCallback;
 import com.snowplowanalytics.snowplow.tracker.SessionState;
 import com.snowplowanalytics.snowplow.util.TimeMeasure;
 

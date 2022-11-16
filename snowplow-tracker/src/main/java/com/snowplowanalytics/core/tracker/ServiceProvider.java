@@ -33,6 +33,7 @@ import com.snowplowanalytics.core.session.SessionControllerImpl;
 import com.snowplowanalytics.snowplow.network.HttpMethod;
 import com.snowplowanalytics.snowplow.network.Protocol;
 import com.snowplowanalytics.snowplow.tracker.SessionState;
+import com.snowplowanalytics.snowplow.util.TimeMeasure;
 
 import java.util.List;
 import java.util.Objects;

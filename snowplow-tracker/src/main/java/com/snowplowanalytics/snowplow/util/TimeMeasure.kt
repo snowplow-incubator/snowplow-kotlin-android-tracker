@@ -7,7 +7,7 @@ import java.util.concurrent.TimeUnit
  * @param value Time duration at the selected TimeUnit.
  * @param unit Measure unit of the time duration.
  */
-class TimeMeasure(val value: Long, val unit: TimeUnit) {
+class TimeMeasure(val value: Long, val unit: TimeUnit) : java.io.Serializable {
 
     /**
      * Convert the time unit of current time duration.

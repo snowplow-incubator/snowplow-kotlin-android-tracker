@@ -446,7 +446,8 @@ open class TrackerConfiguration(
     }
 
     /**
-     * Whether to anonymise client-side user identifiers in session and platform context entities
+     * Whether to anonymise client-side user identifiers in session (userId, previousSessionId), 
+     * subject (userId, networkUserId, domainUserId, ipAddress) and platform context entities (IDFA)
      */
     fun userAnonymisation(userAnonymisation: Boolean): TrackerConfiguration {
         this.userAnonymisation = userAnonymisation

@@ -1,7 +1,6 @@
 package com.snowplowanalytics.core.tracker;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 
 import com.snowplowanalytics.core.emitter.Emitter;
 import com.snowplowanalytics.core.emitter.EmitterConfigurationUpdate;
