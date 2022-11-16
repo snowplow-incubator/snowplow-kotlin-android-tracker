@@ -10,14 +10,9 @@
  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the Apache License Version 2.0 for the specific language governing permissions and limitations there under.
  */
+package com.snowplowanalytics.snowplow.event
 
-package com.snowplowanalytics.snowplow.event;
-
-/** Trigger that caused the message notification. */
-public enum MessageNotificationTrigger {
-    push,
-    location,
-    calendar,
-    timeInterval,
-    other
+/** Trigger that caused the message notification.  */
+enum class MessageNotificationTrigger {
+    PUSH, LOCATION, CALENDAR, TIME_INTERVAL, OTHER
 }

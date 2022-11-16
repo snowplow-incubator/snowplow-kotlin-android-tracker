@@ -716,7 +716,7 @@ public class Tracker {
         String url = null;
         String referrer = null;
 
-        if (event.schema.equals(DeepLinkReceived.SCHEMA) && event.payload != null) {
+        if (event.schema.equals(DeepLinkReceived.schema) && event.payload != null) {
             url = (String)event.payload.get(DeepLinkReceived.PARAM_URL);
             referrer = (String)event.payload.get(DeepLinkReceived.PARAM_REFERRER);
         }

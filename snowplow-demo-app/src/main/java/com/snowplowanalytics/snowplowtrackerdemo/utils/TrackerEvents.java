@@ -16,7 +16,6 @@ package com.snowplowanalytics.snowplowtrackerdemo.utils;
 import androidx.annotation.NonNull;
 
 import com.snowplowanalytics.snowplow.controller.TrackerController;
-import com.snowplowanalytics.snowplow.event.AbstractPrimitive;
 import com.snowplowanalytics.snowplow.event.DeepLinkReceived;
 import com.snowplowanalytics.snowplow.event.MessageNotification;
 import com.snowplowanalytics.snowplow.event.MessageNotificationTrigger;
@@ -125,7 +124,7 @@ public class TrackerEvents {
     }
 
     private static void trackMessageNotification(TrackerController tracker) {
-        MessageNotification event = new MessageNotification("title", "body", MessageNotificationTrigger.push)
+        MessageNotification event = new MessageNotification("title", "body", MessageNotificationTrigger.PUSH)
                 .notificationTimestamp("2021-10-18T10:16:08.008Z")
                 .category("category")
                 .action("action")

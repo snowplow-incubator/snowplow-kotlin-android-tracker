@@ -30,7 +30,7 @@ public class LifecycleStateMachine implements StateMachineInterface {
     @NonNull
     @Override
     public List<String> subscribedEventSchemasForTransitions() {
-        return Arrays.asList(Background.SCHEMA, Foreground.SCHEMA);
+        return Arrays.asList(Background.schema, Foreground.schema);
     }
 
     @NonNull

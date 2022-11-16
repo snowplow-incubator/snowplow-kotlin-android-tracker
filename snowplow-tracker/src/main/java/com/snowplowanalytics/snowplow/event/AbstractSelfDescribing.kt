@@ -10,17 +10,11 @@
  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the Apache License Version 2.0 for the specific language governing permissions and limitations there under.
  */
+package com.snowplowanalytics.snowplow.event
 
-package com.snowplowanalytics.snowplow.event;
-
-import androidx.annotation.NonNull;
-
-public abstract class AbstractPrimitive extends AbstractEvent {
-
-    protected AbstractPrimitive() { super(); }
-
+abstract class AbstractSelfDescribing protected constructor() : AbstractEvent() {
     /**
-     * @return The name of the event.
+     * @return The schema of the event.
      */
-    public abstract @NonNull String getName();
+    abstract val schema: String
 }
