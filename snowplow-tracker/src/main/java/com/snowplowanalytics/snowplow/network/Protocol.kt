@@ -10,15 +10,20 @@
  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the Apache License Version 2.0 for the specific language governing permissions and limitations there under.
  */
-
-package com.snowplowanalytics.snowplow.network;
+package com.snowplowanalytics.snowplow.network
 
 /**
- * Interface for all Emitter Callbacks
+ * Protocol is used to set the protocol used for sending Requests.
+ * Either HTTP or HTTPS.
  */
-public interface RequestCallback {
+enum class Protocol {
+    /**
+     * Events are sent without security.
+     */
+    HTTP,
 
-    void onSuccess(int successCount);
-
-    void onFailure(int successCount, int failureCount);
+    /**
+     * Events are sent with added security.
+     */
+    HTTPS
 }

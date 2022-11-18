@@ -10,34 +10,19 @@
  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the Apache License Version 2.0 for the specific language governing permissions and limitations there under.
  */
-
-package com.snowplowanalytics.snowplow.network;
-
-import android.net.Uri;
-import androidx.annotation.NonNull;
-
-import java.util.List;
+package com.snowplowanalytics.snowplow.network
 
 /**
- * Interface for the component that
- * sends events to the collector.
+ * HttpMethod is used to set the request method for your Emitter (i.e. GET or POST requests).
  */
-public interface NetworkConnection {
+enum class HttpMethod {
+    /**
+     * Each event is sent individually in separate GET requests.
+     */
+    GET,
 
     /**
-     * Send requests to the collector.
-     * @param requests to send.
-     * @return results of the sending operation.
+     * Events can be grouped together in a SchemaPayload and sent in one request if desired.
      */
-    @NonNull List<RequestResult> sendRequests(@NonNull List<Request> requests);
-
-    /**
-     * @return http method used to send requests to the collector.
-     */
-    @NonNull HttpMethod getHttpMethod();
-
-    /**
-     * @return URI of the collector.
-     */
-    @NonNull Uri getUri();
+    POST
 }
