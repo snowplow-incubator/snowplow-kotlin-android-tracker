@@ -10,20 +10,12 @@
  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the Apache License Version 2.0 for the specific language governing permissions and limitations there under.
  */
+package com.snowplowanalytics.snowplow.globalcontexts
 
-package com.snowplowanalytics.snowplow.globalcontexts;
+import com.snowplowanalytics.snowplow.payload.SelfDescribingJson
+import com.snowplowanalytics.snowplow.tracker.InspectableEvent
 
-import androidx.annotation.NonNull;
-
-import com.snowplowanalytics.snowplow.tracker.InspectableEvent;
-import com.snowplowanalytics.snowplow.payload.SelfDescribingJson;
-
-import java.util.List;
-
-public interface ContextGenerator {
-
-    @NonNull
-    List<SelfDescribingJson> generateContexts(@NonNull InspectableEvent event);
-
-    boolean filterEvent(@NonNull InspectableEvent event);
+interface ContextGenerator {
+    fun generateContexts(event: InspectableEvent): List<SelfDescribingJson?>
+    fun filterEvent(event: InspectableEvent): Boolean
 }
