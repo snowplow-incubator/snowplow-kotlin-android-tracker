@@ -64,7 +64,7 @@ object Snowplow {
         context: Context,
         remoteConfiguration: RemoteConfiguration,
         defaultBundles: List<ConfigurationBundle?>?,
-        onSuccess: Consumer<Pair<List<String>, ConfigurationState>?>?
+        onSuccess: Consumer<Pair<List<String>, ConfigurationState?>?>
     ) {
         configurationProvider = ConfigurationProvider(remoteConfiguration, defaultBundles)
         configurationProvider!!.retrieveConfiguration(
