@@ -30,7 +30,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.util.Consumer
 import androidx.core.util.Pair
 
-import com.snowplowanalytics.core.remoteconfiguration.ConfigurationState
+import com.snowplowanalytics.snowplow.configuration.ConfigurationState
 import com.snowplowanalytics.core.utils.Util
 import com.snowplowanalytics.snowplow.Snowplow.createTracker
 import com.snowplowanalytics.snowplow.Snowplow.defaultTracker

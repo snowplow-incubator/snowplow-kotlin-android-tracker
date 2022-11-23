@@ -8,11 +8,11 @@ import androidx.test.espresso.core.internal.deps.guava.collect.Lists;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.platform.app.InstrumentationRegistry;
 
-import com.snowplowanalytics.core.remoteconfiguration.ConfigurationBundle;
+import com.snowplowanalytics.snowplow.configuration.ConfigurationBundle;
 import com.snowplowanalytics.core.remoteconfiguration.ConfigurationCache;
 import com.snowplowanalytics.core.remoteconfiguration.ConfigurationFetcher;
 import com.snowplowanalytics.core.remoteconfiguration.ConfigurationProvider;
-import com.snowplowanalytics.core.remoteconfiguration.ConfigurationState;
+import com.snowplowanalytics.snowplow.configuration.ConfigurationState;
 import com.snowplowanalytics.core.remoteconfiguration.FetchedConfigurationBundle;
 import com.snowplowanalytics.snowplow.configuration.NetworkConfiguration;
 import com.snowplowanalytics.snowplow.configuration.RemoteConfiguration;

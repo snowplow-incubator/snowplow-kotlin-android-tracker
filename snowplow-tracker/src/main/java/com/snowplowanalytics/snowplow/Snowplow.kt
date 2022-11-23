@@ -5,9 +5,9 @@ import android.webkit.WebView
 import androidx.core.util.Consumer
 import androidx.core.util.Pair
 
-import com.snowplowanalytics.core.remoteconfiguration.ConfigurationBundle
+import com.snowplowanalytics.snowplow.configuration.ConfigurationBundle
 import com.snowplowanalytics.core.remoteconfiguration.ConfigurationProvider
-import com.snowplowanalytics.core.remoteconfiguration.ConfigurationState
+import com.snowplowanalytics.snowplow.configuration.ConfigurationState
 import com.snowplowanalytics.core.remoteconfiguration.FetchedConfigurationBundle
 import com.snowplowanalytics.core.tracker.ServiceProvider
 import com.snowplowanalytics.core.tracker.TrackerWebViewInterface

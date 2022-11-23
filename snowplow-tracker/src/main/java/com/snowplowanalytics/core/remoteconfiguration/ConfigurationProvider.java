@@ -7,6 +7,8 @@ import androidx.annotation.Nullable;
 import androidx.core.util.Consumer;
 import androidx.core.util.Pair;
 
+import com.snowplowanalytics.snowplow.configuration.ConfigurationBundle;
+import com.snowplowanalytics.snowplow.configuration.ConfigurationState;
 import com.snowplowanalytics.snowplow.configuration.RemoteConfiguration;
 
 import java.util.List;

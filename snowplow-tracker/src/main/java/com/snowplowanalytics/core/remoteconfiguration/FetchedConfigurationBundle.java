@@ -5,6 +5,7 @@ import android.content.Context;
 import androidx.annotation.NonNull;
 
 import com.snowplowanalytics.snowplow.configuration.Configuration;
+import com.snowplowanalytics.snowplow.configuration.ConfigurationBundle;
 
 import org.json.JSONArray;
 import org.json.JSONException;
