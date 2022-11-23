@@ -4,7 +4,7 @@ import android.content.Context
 import org.json.JSONObject
 
 class ConfigurationBundle @JvmOverloads constructor(
-    val namespace: String,
+    @JvmField val namespace: String,
     networkConfiguration: NetworkConfiguration? = null
 ) : Configuration {
     @JvmField

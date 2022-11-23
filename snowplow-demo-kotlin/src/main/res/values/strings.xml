@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">Tracker Demo</string>
+    <string name="app_name">Tracker Demo (Kotlin)</string>
 
-    <string name="main_demo_header">Android Tracker Demo</string>
+    <string name="main_demo_header">Kotlin Android Tracker Demo</string>
     <string name="main_demo_info">
         To launch the demonstration simply click the button below.
         The demo will send every combination of event construction available to the tracker to an
@@ -16,7 +16,7 @@
     <string name="main_demo_button">Tracker Demo</string>
 
     <string name="title_activity_demo">Tracker Demo</string>
-    <string name="demo_header">Tracker Demo</string>
+    <string name="demo_header">Tracker Demo (Kotlin) </string>
     <string name="demo_info">Enter settings below and then hit start.</string>
 
     <string name="uri_text">URI:</string>

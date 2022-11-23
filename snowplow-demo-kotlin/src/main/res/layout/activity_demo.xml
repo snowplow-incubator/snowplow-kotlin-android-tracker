@@ -30,7 +30,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:background="#0099cc"
+        android:background="#6738b8"
         android:gravity="center"
         android:padding="10dp"
         android:text="@string/demo_header"
